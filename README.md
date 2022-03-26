@@ -1,7 +1,7 @@
 # Clinic-Management-System
 Clinic Management System using C-programing language and Data Structure
 
-	# first mode is admin mode:
+# first mode is admin mode:
 		
 		In this mode user can: 
                                    1-add new patient record
@@ -10,7 +10,7 @@ Clinic Management System using C-programing language and Data Structure
 				       4-Cancel reservation
 				       5-display records
 
-	# second mode is user mode:
+# second mode is user mode:
   
 		In this mode user can: 
                                    1-View his record 
