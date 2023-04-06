@@ -1,3 +1,5 @@
+#ifndef VARIABLES_H
+#define VARIABLES_H
 
 #define null 0
 #pragma pack (1)
@@ -22,11 +24,7 @@ typedef struct new_patient{
 
 patient *head=null;
 
-u16  uniq_id (u16 ID);
-void Add_new(patient type);
-void view_records(void);
-void Edit_info(u16 Edit_id);
-u8 reserve_slot( u8 Copy_slot );
-void view_reserved_slots(void);
-void cancel_reservtion(u16 Reserved_id);
-void view_myrecord(u16 copy_id);
+
+
+
+#endif
