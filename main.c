@@ -59,27 +59,94 @@ void main(void){
 							
 							if(op==1){
 								
+									patient new_patient;
+									
+									printf("please enter patient name:");
+									scanf("%s",&new_patient.name);
+									
+									printf("please enter patient age:");
+									scanf("%d",&new_patient.age);
+									
+									printf("please enter patient gender (M or F):");
+									scanf("%s",&new_patient.gender);
+									
+									printf("please enter patient ID:");
+									scanf("%d",&new_patient.id);
+
+									new_patient.id = uniq_id (new_patient.id);
+									new_patient.slot=0;
+									Add_new(new_patient);
+
+									printf("*--------------------------------*\n");
+									printf("Would you like to do anthoer operation?\n");
+									printf("1-yes or 2-No\nenter your choice:");
+									scanf("%d",&times);
+									printf("*--------------------------------*\n");
 									
 							}
 							else if(op==2){
 								
-					
+									u16 Edit_id;
+									printf("please enter patient ID:");
+									scanf("%d",&(Edit_id));
+									printf("*--------------------------------*\n");
+									Edit_info(Edit_id);
+									printf("*--------------------------------*\n");
+									
+									printf("Would you like to do anthoer operation?\n");
+									printf("1-yes or 2-No\nenter your choice:");
+									scanf("%d",&times);
 									
 							}
 								
 							else if(op==3){
 								
-	
+								u16 reserve;
+								patient *Temp=head;
+							    printf("please enter patient ID:");
+								scanf("%d",&reserve);
+								
+								if(head!=null){
+									while( 1 ){
+										if(Temp==null){
+											printf("Incorrect ID.\n");
+											break;
+										}else if(Temp->id == reserve){
+											Temp->slot=reserve_slot(Temp->slot);
+											break;
+										}else{Temp=Temp->next_patient;} 
+									}
+								}else{printf("Empty records\n");}
+								
+								printf("*--------------------------------*\n");
+								printf("Would you like to do anthoer operation?\n");
+								printf("1-yes or 2-No\nenter your choice:");
+								scanf("%d",&times);
+								printf("*--------------------------------*\n");
+									
 							}	
 							
 							else if(op==4){
 								
 								
+								u16 cancel_id;
+								printf("please enter patient id:");
+								scanf("%d",&cancel_id);
+								cancel_reservtion(cancel_id);
+								printf("*--------------------------------*\n");
+								printf("Would you like to do anthoer operation?\n");
+								printf("1-yes or 2-No\nenter your choice:");
+								scanf("%d",&times);
+								printf("*--------------------------------*\n");
 								
 							}
 							else if(op==5){
 								
-		
+								view_records();
+								printf("Would you like to do anthoer operation?\n");
+								printf("1-yes or 2-No\nenter your choice:");
+								scanf("%d",&times);
+								printf("*--------------------------------*\n");
 							}
 							else{
 									printf("wrong choice.try again\n");
@@ -103,10 +170,24 @@ void main(void){
 							printf("*--------------------------------*\n");
 							if(op==1){
 										
-								
+								if(head!=null){
+									u16 copy_id;
+									printf("please enter your id:");
+									scanf("%d",&copy_id);
+									view_myrecord(copy_id);
+								}else{printf("empty records\n");}
+								printf("*--------------------------------*\n");
+								printf("Would you like to do anthoer operation?\n");
+								printf("1-yes or 2-No\nenter your choice:");
+								scanf("%d",&times);
+								printf("*--------------------------------*\n");
 										
 							}else if(op==2){
-								
+								view_reserved_slots();
+								printf("Would you like to do anthoer operation?\n");
+								printf("1-yes or 2-No\nenter your choice:");
+								scanf("%d",&times);
+								printf("*--------------------------------*\n");
 									
 							}else{
 								printf("wrong choice.try again\n");
